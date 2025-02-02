@@ -1,0 +1,81 @@
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    padding: 1em;
+    padding-top: 60px; /* Added padding to avoid overlap with the fixed navbar */
+  }
+  
+  strong { font-size: 1.2em; }
+  h2 { margin-top: 2em; }
+  
+  /* Navbar Styles */
+  nav {
+    position: fixed; /* Fix the navbar at the top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    padding: 20px 0;
+    z-index: 1000; /* Ensure it stays on top */
+    text-align: center;
+  }
+  
+  nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  nav a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Add margin to the sections to avoid overlapping content with the navbar */
+  section {
+    margin-top: 60px; /* Ensure content starts below the fixed navbar */
+  }
+  
+  /* Gallery Styles */
+#gallery {
+    margin-top: 60px;
+  }
+  
+  .gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Auto-adjust grid columns */
+    gap: 15px;
+    padding: 15px;
+  }
+  
+  .gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .gallery-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+  }
+  
+  .gallery-item img:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Small screens */
+  @media (max-width: 768px) {
+    .gallery-container {
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* More columns on smaller screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .gallery-container {
+      grid-template-columns: 1fr; /* Single column for very small screens */
+    }
+  }
+  
